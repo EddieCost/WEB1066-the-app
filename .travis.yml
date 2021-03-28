@@ -32,7 +32,7 @@ jobs:
       script:
       - $COVERAGE ./gradlew test jacocoTestCoverageVerification
       env:
-      - COVERAGE=0.0.3499999940395355224609375
+      - COVERAGE=0.0.349999994039535522460937
 
 
 
