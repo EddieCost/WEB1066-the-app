@@ -9,7 +9,7 @@ before_install:
 
 stages:
   - test
-  - Coverage Verfication
+  - Coverage
 
 jobs:
   include:
@@ -23,7 +23,7 @@ jobs:
       install: skip
       script:
       - ./gradlew jacocoTestReport
-  - stage: Coverage Verification
+  - stage: Coverage
       name: "Jacoco Test Coverage"
      install: skip
      if:
