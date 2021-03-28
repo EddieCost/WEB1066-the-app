@@ -12,16 +12,22 @@ stages:
 
 jobs:
   include:
-  - stage: test
+    - stage: test
       name: "Test cases"
       install: skip
       script:
       - ./gradlew test
-  - stage: test
+    - stage: test
       name: "Jacoco Test Report"
       install: skip
       script:
       - ./gradlew jacocoTestReport
+    - stage: test
+      name: "Jacoco Test Coverage"
+      when: on_success
+      script:
+      - ./gradlew test jacocoTestCoverageVerification
+      echo 'WIP'
 
 
 
