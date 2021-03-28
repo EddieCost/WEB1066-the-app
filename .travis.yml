@@ -7,11 +7,23 @@ dist: trusty
 before_install:
   - ./gradlew clean jar
 
+script:
+  - ./gradlew test jacocoTestCoverageVerification
+  if
+
 stages:
+  - Coverage Verfication
   - test
+
 
 jobs:
   include:
+    - stage: Coverage Verification
+      name: "Jacoco Test Coverage"
+      install: skip
+      script:
+        - ./gradlew test jacocoTestCoverageVerification
+        echo 'WIP'
     - stage: test
       name: "Test cases"
       install: skip
