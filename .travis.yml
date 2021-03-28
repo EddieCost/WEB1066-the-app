@@ -15,25 +15,21 @@ stages:
   - test
 
 jobs:
-  include:
     - stage: test
-      name: "Test cases"
-      install: skip
-      script:
-      - ./gradlew test
-    - stage: test
-      name: "Jacoco Test Report"
-      install: skip
-      script:
-      - ./gradlew jacocoTestReport
-    - stage: test
-      name: "Jacoco Test Coverage"
+      name: "Coverage Checks"
       install: echo 'WIP'
       when: on_success
       script:
-      - COVERAGE=$COVERAGE ./gradlew test jacocoTestCoverageVerification
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
+      - COVERAGE=$UNIQUECOVERAGE ./gradlew -p ./monolithic/repository/cart check
+      - COVERAGE=$UNIQUECOVERAGE ./gradlew -p ./monolithic/repository/product check
+      - COVERAGE=$UNIQUECOVERAGE ./gradlew -p ./monolithic/repository/user check
       env:
-      - COVERAGE=0.3
+      - COVERAGE=0.5
+      - UNIQCOVERAGE=0.2
 
 
 
