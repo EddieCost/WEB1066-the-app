@@ -23,13 +23,11 @@ jobs:
     - stage: test
       name: "Test cases"
       install: skip
-      when: on_success
       script:
       - ./gradlew test
     - stage: test
       name: "Jacoco Test Report"
       install: skip
-      when: on success
       script:
       - ./gradlew jacocoTestReport
 
