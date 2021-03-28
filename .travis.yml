@@ -2,13 +2,15 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 
-steps: echo testing coming soon
-displayname: 'testing coming soon'
+#steps: echo testing coming soon
+#displayname: 'testing coming soon'
 
 script:
   - ./gradlew clean jar
+  - ./gradlew test
 
-
+stages:
+  - test
 
 
 
