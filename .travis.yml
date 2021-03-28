@@ -2,6 +2,9 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 
+
+
+
 #steps: echo testing coming soon
 #displayname: 'testing coming soon'
 before_install:
@@ -27,7 +30,9 @@ jobs:
       install: echo 'WIP'
       when: on_success
       script:
-      - ./gradlew test jacocoTestCoverageVerification
+      - $COVERAGE ./gradlew test jacocoTestCoverageVerification
+      env:
+      - COVERAGE=0.35
 
 
 
