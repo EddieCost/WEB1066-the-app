@@ -25,10 +25,10 @@ jobs:
   - stage: test
       name: "Jacoco Test Coverage"
       install: skip
-      when: on_success
       script:
       - ./gradlew test jacocoTestCoverageVerification
-    
+      echo 'WIP'
+
 
 
 after_success:
