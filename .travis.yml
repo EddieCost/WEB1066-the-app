@@ -13,16 +13,16 @@ stages:
 
 jobs:
   include:
-    - stage: test
-      name: "Test cases"
-      install: skip
-      script:
-      - ./gradlew test
-    - stage: test
-      name: "Jacoco Test Report"
-      install: skip
-      script:
-      - ./gradlew jacocoTestReport
+  #  - stage: test
+#      name: "Test cases"
+#      install: skip
+#      script:
+#      - ./gradlew test
+#    - stage: test
+#      name: "Jacoco Test Report"
+#      install: skip
+#      script:
+#      - ./gradlew jacocoTestReport
     - stage: Coverage Verification
       name: "Jacoco Test Coverage"
      install: skip
