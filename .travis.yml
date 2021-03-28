@@ -20,18 +20,18 @@ jobs:
       name: "Test cases"
       install: skip
       script:
-      - ./gradlew test npm run test
+      - ./gradlew test
     - stage: test
       name: "Jacoco Test Report"
       install: skip
       script:
-      - ./gradlew jacocoTestReport npm run lint
+      - ./gradlew jacocoTestReport
     - stage: test
       name: "Jacoco Test Coverage"
       install: echo 'WIP'
       when: on_success
       script:
-      - $COVERAGE ./gradlew test jacocoTestCoverageVerification
+      - ./gradlew test jacocoTestCoverageVerification $COVERAGE 
       env:
       - COVERAGE=0.3
 
