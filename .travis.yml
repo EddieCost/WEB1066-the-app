@@ -22,12 +22,7 @@ jobs:
       install: skip
       script:
       - ./gradlew jacocoTestReport
-  - stage: test
-      name: "Jacoco Test Coverage"
-      install: skip
-      script:
-      - ./gradlew test jacocoTestCoverageVerification
-      echo 'WIP'
+
 
 
 
