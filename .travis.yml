@@ -13,17 +13,17 @@ stages:
 
 jobs:
   include:
-    - stage: test
+  - stage: test
       name: "Test cases"
       install: skip
       script:
       - ./gradlew test
-    - stage: test
+  - stage: test
       name: "Jacoco Test Report"
       install: skip
       script:
       - ./gradlew jacocoTestReport
-    - stage: Coverage Verification
+  - stage: Coverage Verification
       name: "Jacoco Test Coverage"
      install: skip
      if:
@@ -33,10 +33,10 @@ jobs:
       echo 'WIP'
 
 
-#after_success:
-#  - set -x -v;
-#    set -e;
-#    find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{print $3" "$4" "$4}'
+after_success:
+  - set -x -v;
+    set -e;
+    find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{print $3" "$4" "$4}'
 
 
 
