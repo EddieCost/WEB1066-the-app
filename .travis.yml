@@ -9,7 +9,6 @@ before_install:
 
 stages:
   - test
-  - coverage
 
 jobs:
   include:
@@ -23,7 +22,7 @@ jobs:
       install: skip
       script:
       - ./gradlew jacocoTestReport
-  - stage: coverage
+  - stage: test
       name: "Jacoco Test Coverage"
      install: skip
      when: on_success
