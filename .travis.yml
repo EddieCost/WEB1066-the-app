@@ -28,7 +28,7 @@ jobs:
       - COVERAGE=$UNIQCOVERAGE ./gradlew -p ./monolithic/repository/product check
       - COVERAGE=$UNIQCOVERAGE ./gradlew -p ./monolithic/repository/user check
       env:
-      - COVERAGE=0.5
+      - COVERAGE=0.3
       - UNIQCOVERAGE=0.2
 
 
