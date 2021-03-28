@@ -25,6 +25,7 @@ jobs:
     - stage: test
       name: "Jacoco Test Coverage"
       install: echo 'WIP'
+      when: on_success
       script:
       - ./gradlew test jacocoTestCoverageVerification
 
