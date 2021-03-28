@@ -30,9 +30,9 @@ jobs:
       install: echo 'WIP'
       when: on_success
       script:
-      - $COVERAGE./gradlew test jacocoTestCoverageVerification
+      - $COVERAGE ./gradlew test jacocoTestCoverageVerification
       env:
-      - COVERAGE=0.34
+      - COVERAGE=0.3
 
 
 
