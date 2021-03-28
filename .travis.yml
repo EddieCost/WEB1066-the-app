@@ -8,24 +8,26 @@ before_install:
   - ./gradlew clean jar
 
 stages:
-  - Coverage Verfication
   - test
+  - Coverage Verfication
 
 jobs:
   include:
-  #  - stage: test
-#      name: "Test cases"
-#      install: skip
-#      script:
-#      - ./gradlew test
-#    - stage: test
-#      name: "Jacoco Test Report"
-#      install: skip
-#      script:
-#      - ./gradlew jacocoTestReport
+    - stage: test
+      name: "Test cases"
+      install: skip
+      script:
+      - ./gradlew test
+    - stage: test
+      name: "Jacoco Test Report"
+      install: skip
+      script:
+      - ./gradlew jacocoTestReport
     - stage: Coverage Verification
       name: "Jacoco Test Coverage"
      install: skip
+     if:
+     when: on_success
      script:
       - ./gradlew test jacocoTestCoverageVerification
       echo 'WIP'
