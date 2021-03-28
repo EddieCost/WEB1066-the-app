@@ -2,10 +2,13 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 
-before_install:
+steps: echo testing coming soon
+displayname: 'testing coming soon'
+
+script:
   - ./gradlew clean jar
 
- echo 'testing coming soon'
+
 
 
 
