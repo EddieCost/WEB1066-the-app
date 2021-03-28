@@ -13,12 +13,6 @@ stages:
 
 jobs:
   include:
-    - stage: Coverage Verification
-      name: "Jacoco Test Coverage"
-      install: skip
-      script:
-        - ./gradlew test jacocoTestCoverageVerification
-        echo 'WIP'
     - stage: test
       name: "Test cases"
       install: skip
@@ -29,6 +23,12 @@ jobs:
       install: skip
       script:
       - ./gradlew jacocoTestReport
+    - stage: Coverage Verification
+      name: "Jacoco Test Coverage"
+     install: skip
+     script:
+      - ./gradlew test jacocoTestCoverageVerification
+      echo 'WIP'
 
 
 after_success:
