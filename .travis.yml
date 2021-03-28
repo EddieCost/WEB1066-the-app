@@ -4,6 +4,7 @@ dist: trusty
 
 before_install:
   - ./gradlew clean jar
+
  echo 'testing coming soon'
 
 
