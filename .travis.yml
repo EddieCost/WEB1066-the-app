@@ -1,8 +1,12 @@
 sudo: required
+services:
+  - docker
 language: java
 jdk: oraclejdk8
 dist: trusty
 
+env:
+  - COVERAGE=0.2
 
 
 
@@ -27,8 +31,6 @@ jobs:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
-      env:
-      - COVERAGE=0.2
 
 
 
