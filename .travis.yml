@@ -23,14 +23,14 @@ jobs:
     - stage: java_version
       jdk: oraclejdk8
       name: "Java 8"
-      install: echo 'WIP'
+      install: skip
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
     - stage: java_version
       jdk: oraclejdk9
       name: "Java 9"
-      install: echo 'WIP'
+      install: skip
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
