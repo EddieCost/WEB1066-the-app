@@ -20,6 +20,7 @@ stages:
   - java_version
 
 jobs:
+  include:
     - stage: java_version
       jdk: oraclejdk8
       name: "Java 8"
