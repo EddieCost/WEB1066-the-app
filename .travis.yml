@@ -28,6 +28,12 @@ jobs:
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
     - stage: java_version
       jdk: oraclejdk9
       name: "Java 9"
@@ -35,12 +41,12 @@ jobs:
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
-    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
 
 
 
