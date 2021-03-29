@@ -6,7 +6,7 @@ jdk: oraclejdk8
 dist: trusty
 
 env:
-  - COVERAGE=0.2
+  - COVERAGE=0.24
 
 
 
