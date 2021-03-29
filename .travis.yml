@@ -40,5 +40,5 @@ script:
 #    - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
 
 after_success:
-- set -x -v; set -e
+# set -x -v; set -e
 # chmod +x ./script/deploy.sh
