@@ -41,4 +41,4 @@ script:
 
 after_success:
 - set -x -v; set -e
-- chmod +x ./script/deploy.sh
+# chmod +x ./script/deploy.sh
