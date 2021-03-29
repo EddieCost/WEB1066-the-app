@@ -21,14 +21,14 @@ stages:
 jobs:
     - stage: test
       jdk: oraclejdk8
-      name: "Coverage Checks"
+      name: "Java 8"
       install: echo 'WIP'
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
     - stage: test
       jdk: oraclejdk9
-      name: "Coverage Checks"
+      name: "Java 9"
       install: echo 'WIP'
       when: on_success
       script:
