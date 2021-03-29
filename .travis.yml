@@ -24,9 +24,9 @@ jobs:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
-      - COVERAGE=$COVERAGE  ./gradlew -p ./monolithic/repository/cart check
-      - COVERAGE=$COVERAGE  ./gradlew -p ./monolithic/repository/product check
-      - COVERAGE=$COVERAGE  ./gradlew -p ./monolithic/repository/user check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
+      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
       env:
       - COVERAGE=0.5
       - UNIQCOVERAGE=0.2
