@@ -5,11 +5,14 @@ services:
 #jdk: oraclejdk8
 dist: trusty
 env:
+  - NODE_VERSION=8-jessie
 
   global:
     secure: PoVt65e3O5hwA414y6KwOylgvetq9lPON4j6GnnJtXoWRO0xIqw5czaKdZrN3mloRmg20bBMqIiZYvb1d1tN2OWFmcX2ZG97jcqpZOUTnw40L3ijpUYKfUotJeNFw02oYxIa0Ii5mBpQPHmLSGsjBcs1lo5o7oE4Lk4yF6juCdFTbpKp9NfUYiPxf/JXSZwGdrB+ufH4SVfXLd9PFKtzWUBOWxCfAcP6lU+Jtfo2HG77FaDucL0KRbT1XGoBWT9JZo/IY9O7EMDeymeq1n2cYc2Fy1jahMcxCPEO4EywCjkZCsqmWrunj71Z52clglvmBID8xDo6r1cT1m5l2LAAuQ2Ix9GZ0KX4hYg13NffI0U5+TSY0Vx7iemQEuDqnoL3+L8PfxgSIJRSfvyNQS/EUJc1gq67Ejw1QRtcaawWK3vBfCeYzQ3ZlNezhBXoHxynKVD2ToMtrheNEP+b/y+9pp5VEhj9RhS9sInEaxQmusDPKQosXQTmSqEWKYF5jqMSFD1VP/4BzFMmz/NSXRQgkmMdSvVmoucI+W2HjmeZon4Xy5Am7kTRMNi34MIB4eWzewh8qDR9wsv0o7W2PLFHQhmHKQwZDI83hYL2dby+v0dG2klF9IIP/TxD2aQEbLxaKVP4gD8/FrOaRB6osl6fzdeT2KjVtk5Gnlyu2LfkqCk=
 
 script:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker build -t node:$NODE_VERSION --build-arg NODE_IMAGE="node:${NODE_VERSION}"
   - docker tag zutherb/monolithic-shop:lateest $DOCKER_USERNAME/monolithic-shop:latest
   - docker push $DOCKER_USERNAME/monolithic-shop:latest
 
