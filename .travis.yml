@@ -12,9 +12,11 @@ env:
 
 before_install:
   - ./gradlew -p ./monolithic/ui packageToContainer
+  - docker build -t $DOCKER_USERNAME/monolithic-shop:latest
+  - docker login -u="$DOCKER_USERNAME" -p=$DOCKER_PASSWORD
 
 script:
-  - docker build -t $DOCKER_USERNAME/monolithic-shop:latest
+  #- docker build -t node:$NODE_VERSION --build-arg NODE_IMAGE="node:${NODE_VERSION}"
   - docker tag zutherb/monolithic-shop:latest $DOCKER_USERNAME/monolithic-shop:latest
   - docker push $DOCKER_USERNAME/monolithic-shop:latest
 
@@ -40,5 +42,5 @@ script:
 #    - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
 
 after_success:
-# set -x -v; set -e
-# chmod +x ./script/deploy.sh
+- set -x -v; set -e; find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{print
+  $3" "$4" "$4}'
