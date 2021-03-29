@@ -13,7 +13,7 @@ env:
 script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t node:$NODE_VERSION --build-arg NODE_IMAGE="node:${NODE_VERSION}"
-  - docker tag zutherb/monolithic-shop:lateest $DOCKER_USERNAME/monolithic-shop:latest
+  - docker tag zutherb/monolithic-shop:latest $DOCKER_USERNAME/monolithic-shop:latest
   - docker push $DOCKER_USERNAME/monolithic-shop:latest
 
 before_install:
