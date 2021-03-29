@@ -29,7 +29,6 @@ jobs:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
       env:
       - COVERAGE=0.2
-      - UNIQCOVERAGE=0.2
 
 
 
