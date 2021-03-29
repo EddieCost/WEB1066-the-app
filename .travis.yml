@@ -6,7 +6,7 @@ jdk: oraclejdk8
 dist: trusty
 
 env:
-  - COVERAGE=0.1
+  - COVERAGE=0.5
 
 
 
@@ -25,12 +25,12 @@ jobs:
       when: on_success
       script:
       - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/ui check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
-      - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/cart check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/service/user check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/order check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/cart check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/product check
+    #  - COVERAGE=$COVERAGE ./gradlew -p ./monolithic/repository/user check
 
 
 
